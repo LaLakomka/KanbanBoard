@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Layout } from "./components/layout/layout";
+import { Header } from "./components/header/header";
+import { Footer } from "./components/footer/footer";
+import { Board } from "./components/board/board"
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import {CardMax} from "./components/board/cardMax/cardMax";
+
+const router = createBrowserRouter([
+  {
+      path: "/",
+      element: <Board/>
+  },
+  {
+      path: "/tasks/:cardId",
+      element: <CardMax/>
+  }
+  ])
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Layout>
+        <Header/>
+        <main>
+        <RouterProvider router={router}/>
+        </main>
+        <Footer/>
+      </Layout>
   );
 }
 

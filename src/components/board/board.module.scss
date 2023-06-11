@@ -1,0 +1,18 @@
+.board {
+    display: flex;
+    > *:not(:first-of-type) {
+      margin-left: 24px;
+      
+    }
+
+    @media (max-width: 400px) {
+      display: block;
+      width: 100%;
+      > *:not(:first-of-type) {
+        margin-left: 0px;
+      }
+      overflow: scroll;
+      height: 900px;
+    }
+
+  }

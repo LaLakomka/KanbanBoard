@@ -1,0 +1,22 @@
+.header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #0067A3;
+    flex-shrink: 0;
+  
+    h1 {
+      font-size: 1em;
+    }
+  }
+
+@media (max-width: 400px) {
+  .header {
+    margin-bottom: 20px;
+    margin-right: 15px;
+  }
+}
